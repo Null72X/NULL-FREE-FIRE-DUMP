@@ -1,0 +1,76 @@
+Free Fire libmain.so Dump Guide
+
+Requirements
+- Rooted BlueStacks Emulator
+- MT Manager
+- CRCMainP GUI (crcmainp-gui.exe)
+- Fake libmain.so (32-bit or 64-bit)
+
+Step 1: Set Up the Emulator
+
+1. Launch a rooted BlueStacks emulator.
+2. Install MT Manager.
+3. Grant all required permissions.
+
+Step 2: Obtain the CRC32
+
+1. Open MT Manager.
+2. Navigate to:
+
+   /data/app/com.dts.freefireth-1/lib/arm/
+
+3. Locate libmain.so.
+4. Open Properties.
+5. Copy the CRC32 value from the checksum section.
+
+Step 3: Patch the Fake Library
+
+1. Open the CRCMainP folder on your PC.
+2. Run crcmainp-gui.exe.
+3. Click Input Path.
+4. Select the appropriate fake libmain.so:
+   - armeabi-v7a for 32-bit Free Fire
+   - arm64-v8a for 64-bit Free Fire
+5. Paste the copied CRC32 into the CRC32 field.
+6. Click Patch.
+
+A new file named libmain.so will be generated inside the crcmainp folder.
+
+Step 4: Replace the Original File
+
+1. Transfer the newly generated libmain.so to the emulator.
+2. Navigate to:
+
+   /data/app/com.dts.freefireth-1/lib/arm/
+
+3. Rename the original file:
+
+   libmain.so -> librealmain.so
+
+4. Move the patched libmain.so into the same directory.
+
+Step 5: Generate the Dump
+
+1. Launch Free Fire.
+2. Open the game 1–2 times.
+3. Wait for the dump process to complete.
+
+The dump file should appear in:
+
+   /storage/emulated/0/Android/data/com.dts.freefireth/
+
+Step 6: Restore the Original Library
+
+1. Delete the patched libmain.so.
+2. Rename the backup file back to its original name:
+
+   librealmain.so -> libmain.so
+
+3. Verify that the original library has been restored successfully.
+
+Notes
+
+- Use the correct architecture version (32-bit or 64-bit).
+- Always keep a backup of the original libmain.so.
+- Root access is required.
+- If no dump is generated, verify the CRC32 value and patching process.
