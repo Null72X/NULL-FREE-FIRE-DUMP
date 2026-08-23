@@ -64,7 +64,7 @@ function Lib()
   local menu = gg.choice(names, largestLib, 'These are suitable libs to dump\nChoose the One\n\nRecommended One: '..names[largestLib])
   if not menu then return main() end
   ::there::
-  local output = gg.prompt({'Choose Path for Output','Methods (slide bar) :[1;2]', 'Click true to know About two methods'},{'/sdcard/dump'}, {'path','number', 'checkbox'})
+  local output = gg.prompt({'Choose Path for Output','Methods (slide bar) :[1;2]', 'Click true to know About two methods'},{'/sdcard/Download/dump'}, {'path','number', 'checkbox'})
   if not output then goto menuAgain end
   if output[3] then gg.alert('-> Method-1 is directly getting lib.so from game. This method is recommended if the lib is normal and not obfuscated\n\n\n-> Some games like freefire, lol wild rift obfuscate their lib. When the game is launched, the obfuscated lib produces its normal lib values into memory process.\n\n\n-> Method-2 gets normal lib values from memory process. This method is recommended if the lib is obfuscated\n\nMy advice for newbies is if method 1 doesnt work, use method 2. Using Method-2 will need his start address.I\'ll add that in resulted lib name.') goto there end
   if output[2]=='1' then getLib(menu, output[1]) end
@@ -72,13 +72,13 @@ function Lib()
 end
 
 function Metadata()
-  local output = gg.prompt({'Choose Path for Output'},{'/sdcard/dump'}, {'path'})
+  local output = gg.prompt({'Choose Path for Output'},{'/sdcard/Download/dump'}, {'path'})
   if not output then return main() end
   dumpMetadata(output[1])
 end
 
 function main()
-  local menu = gg.choice({'Dump Libil2cpp.so💙', 'Dump Global Metadata-dat❤'}, 0, 'Made by Lover1500')
+  local menu = gg.choice({'Dump libil2cpp.so', 'Dump global-metadata.dat'}, 0, 'Made by NullX72')
   if not menu then return print('Cancel!') end
   if menu==1 then Lib()
   elseif menu==2 then Metadata()
@@ -115,4 +115,4 @@ end
 
 main()
 
---Lover1500
+--NullX72
