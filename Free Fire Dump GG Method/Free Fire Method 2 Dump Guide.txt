@@ -1,0 +1,60 @@
+Free Fire Game Guardian Method Dump Guide
+
+Requirements
+- Rooted BlueStacks Emulator
+- MT Manager
+- Game Guardian
+- LibDumper
+- Metadata Searcher
+- Rava.txt
+- Il2CppDumper (Il2CppDumper.exe)
+
+Step 1: Set Up the Emulator
+
+1. Launch a rooted BlueStacks emulator.
+2. Install MT Manager.
+3. Install Game Guardian.
+4. Import LibDumper and Metadata Searcher into the emulator.
+5. Grant all required permissions.
+
+Step 2: Set Up Game Guardian and Dump the Files
+
+1. Start Free Fire and wait until you reach the login page.
+2. Open Game Guardian and select Free Fire.
+3. Execute Metadata Searcher.
+4. A value will appear. Hold it, copy its address, and save the address.
+5. Single-click the value, paste:
+   AF 1B B1 FA r
+   Then tap Yes.
+6. Go to the 4th tab and click Dump Memory.
+7. Paste the stored address from Step 4 into both the From: and To: options.
+8. Open the To: dropdown section and select the appropriate selected option.
+9. Click Save.
+10. Execute Metadata Searcher again.
+11. Click "Dump libil2cpp.so".
+12. Select "libil2cpp.so".
+13. Drag the Method slider from 1 to 2.
+14. Export the 3 generated files from the emulator to Windows using File Explorer.
+
+Rename:
+com.dts.freefireth-#######-#######.bin
+
+to:
+global-metadata.dat
+
+Step 3: Use Il2CppDumper
+
+1. Open Il2CppDumper.exe.
+2. For the first file, select:
+   (start address- #########) libil2cpp.so
+3. For the second file, select:
+   global-metadata.dat
+4. When the Command Prompt asks for the address, copy and paste the ######### start address from the file named:
+   (start address- #########) libil2cpp.so
+5. Press Enter and wait approximately 1–2 minutes.
+6. After the process finishes, the generated dump files will be available in the Il2CppDumper output folder.
+
+Notes
+- Make sure libil2cpp.so and global-metadata.dat come from the same game session/version.
+- Keep the start address exactly as shown in the generated file.
+- If the dump fails, verify that all exported files were copied correctly.
