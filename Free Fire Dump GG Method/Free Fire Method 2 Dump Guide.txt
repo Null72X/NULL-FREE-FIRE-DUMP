@@ -30,7 +30,7 @@ Step 2: Set Up Game Guardian and Dump the Files
 7. Paste the stored address from Step 4 into both the From: and To: options.
 8. Open the To: dropdown section and select the appropriate selected option.
 9. Click Save.
-10. Execute Metadata Searcher again.
+10. Execute LibDumper.
 11. Click "Dump libil2cpp.so".
 12. Select "libil2cpp.so".
 13. Drag the Method slider from 1 to 2.
